@@ -1,0 +1,67 @@
+title: TOXO Docs — Smart Layer for CALM
+description: TOXO Python library creates trainable smart layers that transform any LLM (GPT, Gemini, Claude) into domain experts. No fine-tuning, no GPUs, 1000x cost reduction.
+url: https://toxotune.github.io/toxo-docs
+baseurl: ""
+author: TOXO Team
+twitter_username: toxo_ai
+github_username: toxotune
+
+# SEO & Social
+lang: en
+image: /assets/toxo-social-card.png
+logo: /assets/toxo-logo.png
+
+# Jekyll config
+theme: minima
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: default
+      author: TOXO Team
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: default
+      sitemap: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO
+google_analytics: G-XXXXXXXXXX
+google_site_verification: "your-verification-code"
+
+# Social
+social:
+  name: TOXO
+  links:
+    - https://github.com/toxotune/toxo-docs
+    - https://pypi.org/project/toxo/
+
+# Schema.org
+webmaster_verifications:
+  google: "your-verification-code"
+  bing: "your-verification-code"
+
+# Exclude private/internal content from the built site
+exclude:
+  - _internal/
+  - VIRAL_MARKETING_STRATEGY.md
+  - /VIRAL_MARKETING_STRATEGY.md
+
