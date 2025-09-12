@@ -1,7 +1,7 @@
 title: TOXO Docs — Smart Layer for CALM
 description: TOXO Python library creates trainable smart layers that transform any LLM (GPT, Gemini, Claude) into domain experts. No fine-tuning, no GPUs, 1000x cost reduction.
-url: https://toxotune.github.io/toxo-docs
-baseurl: ""
+url: https://toxotune.github.io
+baseurl: "/toxo-docs"
 author: TOXO Team
 twitter_username: toxo_ai
 github_username: toxotune
@@ -30,6 +30,10 @@ defaults:
     values:
       layout: default
       author: TOXO Team
+  - scope:
+      path: ""
+    values:
+      layout: default
   - scope:
       path: ""
       type: "docs"
