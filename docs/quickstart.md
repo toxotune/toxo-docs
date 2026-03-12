@@ -5,14 +5,21 @@ Transform any LLM into a **CALM (Context Augmented Language Model)** faster than
 ## ⚡ Installation (30 seconds)
 
 ```bash
-# The game-changer
+# Core library
 pip install toxo
 
-# Optional: Add specific provider support
-pip install toxo[openai]    # For GPT models
-pip install toxo[claude]    # For Claude models
-pip install toxo[full]      # All providers
+# Install by use case (recommended)
+pip install "toxo[openai]"        # OpenAI provider support
+pip install "toxo[claude]"        # Anthropic provider support
+pip install "toxo[rag]"           # Vector store + retrieval
+pip install "toxo[vision]"        # Optional local document/image tooling
+pip install "toxo[auth]"          # JWT + bcrypt
+pip install "toxo[distributed]"   # Redis-backed features
+pip install "toxo[enterprise]"    # Monitoring/telemetry (optional)
+pip install "toxo[full]"          # Everything (largest install)
 ```
+
+> **Note**: Multimodal via Gemini works out of the box in **direct** mode (bytes sent straight to Gemini). Local PDF rendering/OCR (`toxo[vision]` + Poppler) is optional.
 
 ## 🎯 Your First Smart Layer (60 seconds)
 
@@ -24,9 +31,9 @@ layer = ToxoLayer.load("financial_advisor.toxo")
 
 # Connect to ANY LLM (user specifies model)
 layer.setup_api_key(
-    api_key="YOUR_API_KEY",
-    model="gpt-4o",  # YOU choose the model
-    provider="openai"
+    api_key="YOUR_GEMINI_API_KEY",
+    model="gemini-2.5-flash-lite",  # Recommended default
+    provider="gemini"
 )
 
 # Get expert-level responses instantly
@@ -41,10 +48,10 @@ print(response)
 ```python
 # Same smart layer, different LLMs!
 
-# Use Google's latest Gemini
-layer.setup_api_key("key", "gemini-2.0-flash-exp", "gemini")
+# Use Google's Gemini (recommended)
+layer.setup_api_key("key", "gemini-2.5-flash-lite", "gemini")
 
-# Switch to OpenAI GPT-4
+# Switch to OpenAI GPT-4 / GPT-4o
 layer.setup_api_key("key", "gpt-4o", "openai")
 
 # Try Anthropic Claude  
@@ -92,10 +99,30 @@ asyncio.run(main())
 
 > **"Switched from GPT to Claude in 5 minutes without losing domain expertise."** — AI Startup Founder
 
+## 🧪 Testing TOXO locally
+
+Run the end-to-end capability runner from the `toxo` Python package repo:
+
+```bash
+# Fast (no network)
+python3 testing/toxo_capability_test.py --layer examples/minimal_test_layer.toxo
+
+# Full (live Gemini + multimodal + evidence tests)
+python3 testing/toxo_capability_test.py \
+  --layer examples/rich_test_layer.toxo \
+  --live --multimodal --evidence
+```
+
+To create a richer local test layer:
+
+```bash
+python3 testing/create_rich_test_layer.py
+```
+
 ## ⚠️ Important Notes
 
 - **Model names required**: No hidden defaults. YOU control which model to use.
-- **API keys needed**: Get keys from your chosen provider (OpenAI, Google, Anthropic).
+- **API keys needed**: Get keys from your chosen provider (Google Gemini, OpenAI, Anthropic).
 - **No GPUs required**: Works entirely through LLM APIs.
 
 ## 🚀 What's Next?

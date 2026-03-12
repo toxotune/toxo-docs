@@ -44,13 +44,18 @@ This repository contains documentation only. No `.toxo` artifacts or internal im
 ## 🎯 Transform Any LLM in 30 Seconds
 
 ```bash
-# Install the game-changer
+# Core library
 pip install toxo
 
-# Optional provider support
-pip install toxo[openai]    # For GPT models
-pip install toxo[claude]    # For Claude models  
-pip install toxo[full]      # All providers
+# Optional extras (recommended)
+pip install "toxo[openai]"        # OpenAI provider support
+pip install "toxo[claude]"        # Anthropic provider support  
+pip install "toxo[rag]"           # Vector store + retrieval
+pip install "toxo[vision]"        # Optional local document/image tooling
+pip install "toxo[auth]"          # JWT + bcrypt
+pip install "toxo[distributed]"   # Redis-backed features
+pip install "toxo[enterprise]"    # Monitoring/telemetry (optional)
+pip install "toxo[full]"          # Everything (largest install)
 ```
 
 ## 🔥 Viral Success Stories
@@ -64,9 +69,9 @@ finance_expert = ToxoLayer.load("financial_advisor.toxo")
 
 # Works with ANY LLM provider
 finance_expert.setup_api_key(
-    api_key="YOUR_API_KEY", 
-    model="gpt-4o",  # User chooses model
-    provider="openai"
+    api_key="YOUR_GEMINI_API_KEY", 
+    model="gemini-2.5-flash-lite",  # Recommended default
+    provider="gemini"
 )
 
 # Get expert-level financial advice instantly
@@ -79,10 +84,10 @@ print(advice)
 ```python
 # Same layer, different providers - YOUR CHOICE!
 
-# Use with Gemini (Google's latest)
-expert.setup_api_key("key", "gemini-2.0-flash-exp", "gemini")
+# Use with Gemini (Google's latest, recommended)
+expert.setup_api_key("key", "gemini-2.5-flash-lite", "gemini")
 
-# Switch to GPT-4 (OpenAI)
+# Switch to GPT-4 / GPT-4o (OpenAI)
 expert.setup_api_key("key", "gpt-4o", "openai") 
 
 # Try Claude (Anthropic)
@@ -151,7 +156,7 @@ async def process_batch():
 ## 🌟 Supported LLM Providers
 
 ### 🤖 **Google Gemini** (Recommended)
-- `gemini-2.0-flash-exp` - Latest & fastest
+- `gemini-2.5-flash-lite` - Recommended default (fast + cost-effective)
 - `gemini-1.5-pro` - Most capable
 - `gemini-1.5-flash` - Cost-effective
 

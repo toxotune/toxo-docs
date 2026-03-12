@@ -2,7 +2,7 @@
 
 TOXO smart layers work with ANY LLM provider. Train once, deploy everywhere. Switch models in seconds without losing expertise.
 
-## 🤖 Google Gemini (Recommended)
+## 🤖 Google Gemini (Recommended Default)
 
 ### Why Gemini?
 - ⚡ **Fastest responses** - Optimized for speed
@@ -13,13 +13,13 @@ TOXO smart layers work with ANY LLM provider. Train once, deploy everywhere. Swi
 ```python
 layer.setup_api_key(
     api_key="YOUR_GEMINI_KEY",
-    model="gemini-2.0-flash-exp",  # Latest & fastest
+    model="gemini-2.5-flash-lite",  # Recommended default
     provider="gemini"
 )
 ```
 
 ### Popular Models
-- `gemini-2.0-flash-exp` - Latest experimental (fastest)
+- `gemini-2.5-flash-lite` - Default: fast + cost-effective
 - `gemini-1.5-pro` - Most capable (reasoning)
 - `gemini-1.5-flash` - Balanced (speed + cost)
 
@@ -39,15 +39,15 @@ layer.setup_api_key(
 ```python
 layer.setup_api_key(
     api_key="YOUR_OPENAI_KEY",
-    model="gpt-4o",  # Multimodal powerhouse
+    model="gpt-5.4-thinking",  # Latest high-reasoning model
     provider="openai"
 )
 ```
 
 ### Popular Models
-- `gpt-4o` - Multimodal champion (text + images)
-- `gpt-4` - Reasoning expert (complex tasks)
-- `gpt-3.5-turbo` - Speed demon (fast + cheap)
+- `gpt-5.4-thinking` - Most factual, advanced reasoning
+- `gpt-5.4-pro` - Production-ready, balanced cost/quality
+- `gpt-5.3-codex` - Coding-focused agent
 
 ### Get API Key
 1. Visit [OpenAI Platform](https://platform.openai.com)
@@ -65,15 +65,15 @@ layer.setup_api_key(
 ```python
 layer.setup_api_key(
     api_key="YOUR_ANTHROPIC_KEY",
-    model="claude-3.5-sonnet",  # Analysis champion
+    model="claude-sonnet-4-6",  # Analysis champion
     provider="claude"
 )
 ```
 
 ### Popular Models
-- `claude-3.5-sonnet` - Analysis expert (best balance)
-- `claude-3-opus` - Creative genius (most capable)
-- `claude-3-haiku` - Lightning fast (quick tasks)
+- `claude-opus-4-6` - Most capable (reasoning + coding)
+- `claude-sonnet-4-6` - Best balance of speed and quality
+- `claude-haiku-4.5` - Lightweight, fast tasks
 
 ### Get API Key
 1. Visit [Anthropic Console](https://console.anthropic.com)
@@ -87,11 +87,11 @@ layer.setup_api_key(
 # Load your expert once
 financial_expert = ToxoLayer.load("finance_advisor.toxo")
 
-# Try Gemini for speed
-financial_expert.setup_api_key("key", "gemini-2.0-flash-exp", "gemini")
+# Try Gemini for speed (recommended)
+financial_expert.setup_api_key("key", "gemini-2.5-flash-lite", "gemini")
 response1 = financial_expert.query("Market analysis")
 
-# Switch to GPT-4 for reasoning  
+# Switch to GPT-4 / GPT-4o for reasoning  
 financial_expert.setup_api_key("key", "gpt-4o", "openai")
 response2 = financial_expert.query("Complex financial modeling")
 
@@ -103,7 +103,7 @@ response3 = financial_expert.query("Risk assessment report")
 ## 🎯 Choosing the Right Provider
 
 ### For Speed & Cost
-- **Winner**: Gemini (`gemini-2.0-flash-exp`)
+- **Winner**: Gemini (`gemini-2.5-flash-lite`)
 - **Use case**: High-volume, real-time applications
 
 ### For Reasoning & Logic
