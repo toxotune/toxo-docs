@@ -1,6 +1,6 @@
 # 🚀 TOXO Python — Turn ANY LLM into a Domain Expert in Minutes
 
-[![PyPI](https://img.shields.io/pypi/v/toxo.svg)](https://pypi.org/project/toxo/) [![Downloads](https://img.shields.io/pypi/dm/toxo.svg)](https://pypistats.org/packages/toxo) [![Python versions](https://img.shields.io/pypi/pyversions/toxo.svg)](https://pypi.org/project/toxo/) [![Stars](https://img.shields.io/github/stars/spiderdev27/toxo-docs.svg)](https://github.com/spiderdev27/toxo-docs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](#) [![Docs](https://img.shields.io/badge/docs-online-brightgreen.svg)](./docs/index.md)
+[![PyPI](https://img.shields.io/pypi/v/toxo.svg)](https://pypi.org/project/toxo/) [![Downloads](https://img.shields.io/pypi/dm/toxo.svg)](https://pypistats.org/packages/toxo) [![Python versions](https://img.shields.io/pypi/pyversions/toxo.svg)](https://pypi.org/project/toxo/) [![Stars](https://img.shields.io/github/stars/spiderdev27/toxo-docs.svg)](https://github.com/spiderdev27/toxo-docs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](#) [![Docs](https://img.shields.io/badge/docs-online-brightgreen.svg)](https://toxotune.github.io/toxo-docs/)
 
 ## 🧠 Revolutionary Smart Layer Technology for LLMs
 
@@ -28,7 +28,7 @@ Quick links:
 - Install: `pip install toxo`
 - Quickstart: `docs/quickstart.md`
 - API: `docs/api.md`
-- Providers: `docs/providers.md`
+- Providers (live): [https://toxotune.github.io/toxo-docs/providers.html](https://toxotune.github.io/toxo-docs/providers.html)
 - FAQ: `docs/faq.md`
 - Changelog: `docs/changelog.md`
 
