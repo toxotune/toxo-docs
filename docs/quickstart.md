@@ -127,9 +127,11 @@ python3 testing/create_rich_test_layer.py
 
 ## 🚀 What's Next?
 
-- 📖 [**API Reference**](api.md) - Complete method documentation
-- 🔧 [**Provider Setup**](providers.md) - Multi-provider configuration  
-- 📋 [**FAQ**](faq.md) - Common questions answered
+- 📖 [**API Reference**](api.md) — Complete method documentation
+- 📄 [**Document Conversion**](document-conversion.md) — DOCX, HTML, TXT → PDF for Gemini
+- ☁️ [**Cloud Deployment**](cloud-deployment.md) — Deploy to Google Cloud Run
+- 🔧 [**Provider Setup**](providers.md) — Multi-provider configuration  
+- 📋 [**FAQ**](faq.md) — Common questions answered
 
 **Ready to revolutionize your AI workflow? You're just one `pip install toxo` away! 🎉**
 

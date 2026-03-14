@@ -117,6 +117,17 @@ By default, TOXO sends attachments **directly to Gemini as bytes** (`processing_
 - **Direct (`processing_mode="direct"`, default)**: TOXO loads your attachment as bytes (from path/base64/data URL) and sends it straight to Gemini. This avoids local dependencies like Poppler/pdf2image/PyMuPDF.
 - **Local (`processing_mode="local"`)**: TOXO routes documents through the local processing pipeline (optional, heavier). Use this when you explicitly want local extraction/heuristics.
 
+#### Document conversion (DOCX, HTML, TXT, etc.)
+
+For DOCX, HTML, TXT, CSV, RTF, EPUB, and similar formats, TOXO converts them to PDF before sending to Gemini. See [Document Conversion](document-conversion.md).
+
+```python
+resp = await layer.query_multimodal(
+    "Summarize this document.",
+    document_path="report.docx",  # or .html, .txt, .csv
+)
+```
+
 #### Supported inputs
 
 - **Images**: `bytes`, filesystem `Path`/`str`, base64 string, data URL (`data:image/...;base64,...`)
